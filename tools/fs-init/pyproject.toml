@@ -1,0 +1,26 @@
+[project]
+name = "fs-init"
+version = "0.1.0"
+description = "Safely create Firstsaoke projects from layered templates"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "Firstsaoke AI" }]
+dependencies = []
+
+[project.scripts]
+fs-init = "fs_init.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fs_init"]
